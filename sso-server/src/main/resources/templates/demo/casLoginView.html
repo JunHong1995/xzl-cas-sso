@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title th:text="${#themes.code('demo.pageTitle')}"></title>
+    <link rel="stylesheet" th:href="@{${#themes.code('demo.css.file')}}" />
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <div class="top-bar inner clearfix">
+                <span class="d-b f-l" id="ybt_h_logininfo" th:utext="#{logo.text}"></span>
+            </div>
+            <div class="logobar clearfix">
+                <a id="logo" th:href="#{logo.website}" th:title="#{logo.title}"></a>
+            </div>
+        </header>
+        <div class="loginForm pull-right">
+            <form method="post" th:object="${credential}">
+                <div th:if="${#fields.hasErrors('*')}" class="t-c" id="errCap">
+                    <span th:each="err : ${#fields.errors('*')}" th:utext="${err}" />
+                </div>
+                <h2 th:utext="#{screen.welcome.instructions}" class="t-c hide" id="noNP"></h2>
+                <section class="row clearfix">
+                    <label for="username" th:utext="#{screen.welcome.label.netid}" class="f-l" />
+                    <div th:unless="${openIdLocalId}" class="f-l">
+                        <input class="required" id="username" size="25" tabindex="1" type="text" th:disabled="${guaEnabled}" th:field="*{username}" th:accesskey="#{screen.welcome.label.netid.accesskey}" autocomplete="off" />
+                    </div>
+                </section>
+                <section class="row clearfix">
+                    <label for="password" th:utext="#{screen.welcome.label.password}" class="f-l"/>
+                    <div class="f-l"> 
+                        <input class="required" type="password" id="password" size="25" tabindex="2" th:accesskey="#{screen.welcome.label.password.accesskey}" th:field="*{password}" autocomplete="off" />
+                    </div>
+                </section>
+                <section class="row clearfix">
+                    <label for="system" class="f-l">系&nbsp;&nbsp;&nbsp;统:</label>
+                    <div class="f-l ml-5">
+                        <select class="required" id="system" tabindex="2" th:accesskey="#{screen.welcome.label.password.accesskey}" th:field="*{system}" autocomplete="off">
+                            <option value="sso">SSO</option>
+                            <option value="oa">OA</option>
+                            <option value="crm">CRM</option>
+                        </select>
+                    </div>
+                </section>
+                <section class="row clearfix">
+                    <label for="validateCode" class="f-l">验证码:</label>
+                    <div class="f-l">
+                        <input class="required f-l" id="validateCode" name="validateCode" />
+                        <img id="captcha_img" th:src="@{/captcha}" style="width: 100px;" class="f-l"/>
+                    </div>
+                </section>
+                <section class="login-form-item login-form-submit">
+                    <input type="hidden" name="execution" th:value="${flowExecutionKey}" />
+                    <input type="hidden" name="_eventId" value="submit" />
+                    <input type="hidden" name="geolocation" />
+                    <input class="btn btn-submit btn-block" name="submit" accesskey="l" th:value="#{screen.welcome.button.login}" tabindex="6" type="submit" id="submit" />
+                </section>
+            </form>
+        </div>
+        <footer>
+            <div id="copyright" class="container">
+                <div class="textbox">
+                    <div class="clearfix">
+                        <a th:href="#{copyright.website.gov}" target="_blank"><span th:utext="#{copyright.recordl}"></span></a>
+                        <a th:href="#{copyright.website.govportal}" target="_blank"><span class="beian-icon"></span><span th:utext="#{copyright.recordr}"></span></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

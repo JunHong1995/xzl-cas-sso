@@ -1,0 +1,179 @@
+html,body{
+  width: 100%;
+  height:100%;
+}
+* html { background-image:url(../../images/globar/white-bg.gif); background-attachment:fixed; }
+body { overflow-y:hidden;}
+body, div, dl, dt, dd, ol, ul, li, h1, h2, h3, h4, h5, h6,
+fieldset, legend, form, input, select,textarea, button, p, span, strong, pre,
+a, b, i, img, em, blockquote,table, th, td  { margin:0px; padding:0px; }
+table { border-collapse:collapse; border-spacing:0; text-align:center; }
+caption, th, td { text-align:left;  }
+fieldset, img { border:0px; }
+address, caption, cite, code, dfn, em, th, 
+var, h1, h2, h3, h4, h5, h6  {  font-size:100%; font-style:normal; font-weight:normal; }
+ol, ul, li { list-style:none; }
+strong, b { font-weight:bold; }
+body, button, input, select, textarea { font:12px/36px 'Microsoft Yahei'; }
+a { color:#5e5e5e; text-decoration:none; }
+a,a:active,a:visited,a:hover,
+a:active font,
+a:visited font,
+a:hover font,input { outline:none; border:0px; text-decoration:none; background-color:transparent; }
+a:hover { color:#439adf; text-decoration:none; }
+.f-l{float: left;}
+.clearfix{zoom:1}
+.clearfix:before, .clearfix:after {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+.clearfix:after {
+    /* content: "."; */
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+.row{margin: 5px 0;}
+.row input{margin-left: 5px;}
+.ml-5{margin-left: 5px;}
+.t-c{text-align: center;}
+.hide{display: none;}
+h1 {
+    color: blue;
+}
+
+#container {
+  width: 100%;
+  height:100%;
+  margin: 0 auto;
+  background: url('../../../images/login/ibanner4.jpg') center center no-repeat;
+  background-size:cover;
+  position: relative;
+}
+
+#logo {
+  display: block;
+  background: url(../../../images/login/logo.gif) center center no-repeat;
+  float: left;
+  height: 80px;
+  padding: 10px;
+  width: 244px;
+  margin-right: 40px;
+  border: 0px;
+  color: white;
+  box-sizing: border-box;
+}
+
+#content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#loadingMessage {
+  font-size: 1.4rem;
+}
+
+header .top-bar {
+    background: #6a91ba;
+    padding-left: 10px;
+}
+
+header .logobar {
+    height: 80px;
+    padding-left: 10px;
+    background: #fff;
+}
+
+/*****************formStyle***************/
+.loginForm {
+	background: rgba(0,0,0,0.5);
+	width: 300px;
+	border-left: 4px;
+	padding: 25px;
+    box-sizing: border-box;
+}
+
+.loginForm label{
+	color: #fff;
+}
+#username,#password{
+	width: 197px;
+	background-color: rgb(250, 255, 189);
+}
+
+.pull-right{
+	position: absolute;
+	right: 50px;
+	top:50%;
+	margin-top: -190px;
+}
+ #validateCode{    
+ 	background-color: rgb(250, 255, 189);
+    background-image: none;
+    color: rgb(0, 0, 0);
+	width: 100px;
+	margin-right: 5px;
+}
+
+
+.login-form-submit{
+	padding: 20px 0px 0px 0px;
+    height: 40px;
+    position: relative;
+}
+
+.btn-submit{
+	width: 240px;
+    height: 40px;
+    padding: 0px;
+    background: #729eda;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+.btn-submit:hover{
+	background-color: #4e7dbd;
+}
+/***************footStyle*************************/
+footer {
+  padding: 20px;
+  background: #FFF;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#copyright{
+
+}
+#copyright .textbox{
+  text-align: center;
+  margin: 0 auto;
+}
+#copyright .textbox>div{
+  width: 448px;
+  margin: 0 auto;
+}
+#copyright .textbox>div a{
+  float: left;
+}
+#copyright .textbox>div a span{
+  float: left;
+  color:#5e5e5e;
+}
+#copyright .beian-icon{
+    display:block;
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin:0 20px;
+    background: url(../../../images/login/globar-icon.png) no-repeat;
+    background-position: -308px -781px;
+    vertical-align: middle;
+}
